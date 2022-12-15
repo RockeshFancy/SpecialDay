@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Swanky+and+Moo+Moo&display=swap');
 
 body {
+  padding-top: 100px;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   height: 100vh;
   background-color:#f6f6f6;
