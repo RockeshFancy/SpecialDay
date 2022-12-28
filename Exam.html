@@ -1,0 +1,42 @@
+<html>
+
+    <style>
+       body{
+          display: contents;
+          align-items: center;
+          justify-content: center;
+          color:#000;
+           }
+        .main{
+          cursor: pointer;
+          text-align: center;
+          padding-right: 1px;
+        }    
+    </style>
+<body>
+
+<h1 style="text-align: center;">Hello</h1>
+<br>
+
+<p class="main"; onclick="typeWriter()">👍</p>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'Lorem ipsum dummy text blabla.zjdfbhwalsifdyhslidcubsdnchsdbcsdyfcbsd   sdkfjbhsf widwblhwe hbwehb eybkwhb   efiywbelkhwebKWFGBYUWUABHYKFHYEDYUBEWYFUHBDFUHBCFAUYEYHUBUDYHVBALEYUCVHSBDHBDHBA';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+<p style="margin-top: 30%; text-align: center; padding-left: 200px;"> @Developer_rahul_</p>
+
+</body>
+</html>
