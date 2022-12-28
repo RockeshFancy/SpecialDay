@@ -1,38 +1,65 @@
 <html>
 
 <style>
-       .main{
-          padding-bottom: 300px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color:#000;
-          
-       }
-
         body{
           padding-top: 100px;
           padding-left: 300px;
           }
+          .text1{
+            cursor: pointer;
+            color: red;
+            background-color: white;
+            opacity: 0.5;
+            font-size: 50px;
+            margin: 0px;
+          }
+          .text1:hover{
+           opacity: 1;
+          }
 
-        .text{ 
+          .text2{
             color: #000;
-            font-family: 'Swanky and Moo Moo', cursive;
-        }       
+            margin-bottom: 100px;
+            font-family: 'Swanky and Moo Moo', cursive; 
+          }
+          .text4{
+            color: blue;
+            opacity: 0.1;
+          }
+          .text4:hover{
+            opacity: 1;
+          }
+
+        .main2{
+            padding-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#000;  
+            margin-top: 0px;
+        }
+       
 </style>
 
 <body>
-<h1 >Hello</h1>
+ <div >
+<h1>Hello</h1>
+<p class="text1"; onclick="typeWriter()">👍</p>
 
-<p style="cursor: pointer;" onclick="typeWriter()">👍</p>
-<br>
+<p class="text2"; id="demo"></p>
 
-<p style="font-family: 'Swanky and Moo Moo', cursive;" id="demo"></p>
-<div class="main">
+<p style= "text-align:center; padding-left: 50px;"> @Developer_rahul_</p>
+
+<p style="font-size: small">
+  FINALLY WHAT I WANT TO SAY IS
+  <a class="text4" href="giphy.gif" target="_blank">Big Buck Bunny</a>.
+</p>
+</div>
+<div class="main2">
 <script>
 var i = 0;
-var txt = 'Lorem ipsum dummy text blabla.';
-var speed = 50;
+var txt = 'Lorem ipsum dummy text adadadccdmcsajvdckgyasdvsayusvbyucvsbducydshbcuhdsyblabla.';
+var speed = 100;
 
 function typeWriter() {
   if (i < txt.length) {
@@ -42,8 +69,7 @@ function typeWriter() {
   }
 }
 </script>
-<div>
-<p style="margin-top: 30%; text-align: center; padding-left: 200px;"> @Developer_rahul_</p>
+</div>
 
 </body>
 </html>
