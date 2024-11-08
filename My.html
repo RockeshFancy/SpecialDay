@@ -70,7 +70,7 @@
     }
 
     @media (max-width: 768px) {
-      /* Hide some elements or scale down for mobile screens */
+      /* Font size scaling for mobile */
       #birthdayMessage .title {
         font-size: 8vw;
       }
@@ -85,11 +85,6 @@
 
       #keepSmiling {
         font-size: 6vw;
-      }
-
-      /* Fireworks and balloons might affect performance on smaller screens, hide them on mobile */
-      #birthdayCanvas, #balloonCanvas {
-        display: none;
       }
     }
 
@@ -294,7 +289,7 @@
     fireworks.push(new Firework(x, y, targetX, targetY, color));
   }
 
-  setInterval(createFirework, 2000); // Create new fireworks every 2 seconds
+  setInterval(createFirework, 1500); // Create new fireworks every 1.5 seconds
   function animateFireworks() {
     birthdayCtx.clearRect(0, 0, birthdayCanvas.width, birthdayCanvas.height);
     fireworks.forEach(firework => {
