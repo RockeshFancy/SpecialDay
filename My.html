@@ -28,7 +28,7 @@
     }
 
     #birthdayMessage .title {
-      font-size: 6em;
+      font-size: 10vw; /* Adjust font size based on viewport width */
       font-family: 'Dancing Script', cursive;
       color: #FFD700;
       margin: 0;
@@ -36,7 +36,7 @@
     }
 
     #birthdayMessage .name {
-      font-size: 7em;
+      font-size: 12vw; /* Adjust font size based on viewport width */
       font-family: 'Courier New', Courier, monospace;
       color: #FF69B4;
       margin: 0;
@@ -45,7 +45,7 @@
     }
 
     #birthdayMessage .typing {
-      font-size: 1.5em;
+      font-size: 4vw; /* Adjust font size for better fit */
       font-family: 'Courier New', Courier, monospace;
       color: #fff;
       margin-top: 20px;
@@ -55,7 +55,7 @@
     }
 
     #keepSmiling {
-      font-size: 2em;
+      font-size: 5vw; /* Adjust font size based on viewport width */
       color: #FFD700;
       margin-top: 20px;
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -68,6 +68,31 @@
       left: 0;
       pointer-events: none;
     }
+
+    @media (max-width: 768px) {
+      /* Hide some elements or scale down for mobile screens */
+      #birthdayMessage .title {
+        font-size: 8vw;
+      }
+
+      #birthdayMessage .name {
+        font-size: 10vw;
+      }
+
+      #birthdayMessage .typing {
+        font-size: 5vw;
+      }
+
+      #keepSmiling {
+        font-size: 6vw;
+      }
+
+      /* Fireworks and balloons might affect performance on smaller screens, hide them on mobile */
+      #birthdayCanvas, #balloonCanvas {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 <body>
