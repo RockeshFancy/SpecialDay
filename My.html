@@ -100,13 +100,12 @@
   <p id="keepSmiling">Keep smiling... 😊🎉🎂✨</p>
 </div>
 
-<!-- Canvas Elements for Fireworks and Balloons -->
+<!-- Canvas for Fireworks -->
 <canvas id="birthdayCanvas"></canvas>
-<canvas id="balloonCanvas"></canvas>
 
 <script>
   // Typing effect for the message
-  const message = "Always be happy and have a greatest future as you expected....Give your best as you give everytime...success will be your best friend in all times....May your year be filled with love, laughter, and wonderful moments. ❤️.....Be Happy, Make Happy, Stay Blessed.....with Lots of LOVE  ❤️ ❤️ ❤️....";
+  const message = "Always be happy and have a greatest future as you expected....Give your best as usual...success will be your best friend....May your upcoming year be filled with love, laughter, and wonderful moments. ❤️.....Be Happy, Make Happy, Stay Blessed.....with Lots of LOVE  ❤️ ❤️ ❤️....";
   let index = 0;
   const typingElement = document.getElementById('typingEffect');
   const keepSmilingElement = document.getElementById('keepSmiling');
@@ -126,77 +125,6 @@
 
   // Start the typing animation
   typeMessage();
-
-  // Balloons
-  const balloonCanvas = document.getElementById('balloonCanvas');
-  const balloonCtx = balloonCanvas.getContext('2d');
-  balloonCanvas.width = window.innerWidth;
-  balloonCanvas.height = window.innerHeight;
-
-  const balloons = [];
-
-  // Create many balloons at the start to fill the screen
-  function createBalloon() {
-    const balloon = {
-      x: Math.random() * window.innerWidth,
-      y: window.innerHeight + 50,
-      size: Math.random() * 50 + 30,
-      color: `hsl(${Math.random() * 360}, 100%, 50%)`, // Random color
-      speed: Math.random() * 2 + 1,
-      threadLength: Math.random() * 100 + 150, // Random thread length
-      blast: false // If balloon reached top, it will explode
-    };
-    balloons.push(balloon);
-  }
-
-  // Create a bunch of balloons initially to fill the screen
-  for (let i = 0; i < 300; i++) {
-    createBalloon();
-  }
-
-  function updateBalloons() {
-    balloonCtx.clearRect(0, 0, balloonCanvas.width, balloonCanvas.height);
-
-    balloons.forEach((balloon, index) => {
-      // Draw the balloon thread
-      balloonCtx.beginPath();
-      balloonCtx.moveTo(balloon.x, balloon.y); // Start from the balloon's position
-      balloonCtx.lineTo(balloon.x, balloon.y - balloon.threadLength); // Extend line upwards
-      balloonCtx.strokeStyle = '#808080'; // Thread color
-      balloonCtx.lineWidth = 3;
-      balloonCtx.stroke();
-
-      // Draw the balloon itself (regular round balloon)
-      balloonCtx.beginPath();
-      balloonCtx.arc(balloon.x, balloon.y - balloon.threadLength, balloon.size, 0, Math.PI * 2, false);
-      balloonCtx.fillStyle = balloon.color;
-      balloonCtx.fill();
-      balloonCtx.stroke();
-
-      // Move balloon upwards
-      balloon.y -= balloon.speed;
-
-      // Balloons blast when they reach the top
-      if (balloon.y - balloon.threadLength < 0) {
-        // Exploding the balloon
-        balloon.blast = true;
-        setTimeout(() => {
-          balloons.splice(index, 1); // Remove balloon after it "blasts"
-        }, 100); // Delay before removal
-      }
-    });
-  }
-
-  // Create random balloons at intervals
-  setInterval(() => {
-    createBalloon(); // Create new balloon every 500 milliseconds
-  }, 500); // Adjust the frequency of balloon creation here
-
-  function animateBalloons() {
-    updateBalloons();
-    requestAnimationFrame(animateBalloons);
-  }
-  animateBalloons();
 
   // Fireworks logic for birthday canvas
   const birthdayCanvas = document.getElementById('birthdayCanvas');
